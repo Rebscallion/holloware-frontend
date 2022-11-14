@@ -1,0 +1,406 @@
+@import 'modules/variables';
+@import 'modules/landing';
+@import 'modules/modals';
+@import 'modules/side-modals';
+@import 'modules/register';
+@import 'modules/login';
+@import 'modules/footer';
+@import 'modules/about';
+
+* {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    background-color: $offwhite;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    overflow-y: scroll;
+    user-select: none;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+
+#header {
+
+    #profile {
+        img {
+            height: 96px;
+            border-radius: 100%;
+        }
+    }
+}
+
+i:hover {
+    cursor: pointer;
+}
+
+
+#shop-header {
+    width: 100vw;
+    padding: 2rem;
+    display: flex;
+    border-top: 1px solid $burgundy;
+
+    #logo-link {
+        width: 15%;
+    }
+
+    #HWlogo {
+        width: 100%;
+        object-fit: cover;
+
+    }
+
+    #profile-container {
+        width: 85%;
+
+        ul {
+            display: flex;
+            justify-content: flex-end;
+
+            li {
+                font-weight: bold;
+                font-family: 'roc-grotesk';
+            }
+
+            a {
+                color: $burgundy;
+                text-decoration: none;
+            }
+
+            a:hover {
+                opacity: .7;
+                text-decoration: underline;
+                text-decoration-color: $burgundy;
+            }
+        }
+
+        #user-details {
+            display: flex;
+            align-content: center;
+            align-items: center;
+            justify-content: flex-end;
+            width: 100%;
+            height: 100%;
+
+            #dp {
+                width: 50px;
+                height: 50px;
+                display: inline-block;
+                border-radius: 50%;
+                background-position: 50% 50%;
+                background-size: cover;
+                border: 1px solid $burgundy;
+                background-color: $pink;
+                margin-left: 2rem;
+                transition: all .3s ease-in-out;
+            }
+
+            #dp:hover {
+                opacity: .7;
+                cursor: pointer;
+            }
+
+            i {
+                color: $burgundy;
+                font-size: 22px;
+                margin-left: 1rem;
+            }
+
+            .big-add {
+                display: none;
+            }
+        }
+    }
+}
+
+.modal-body {
+
+    #image-preview {
+        width: 100%;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    #productForm {
+        margin-top: 3rem;
+        padding: 10px 20px;
+        width: 500px;
+
+        label,
+        input {
+            margin-top: 8px;
+        }
+
+        label {
+            margin-right: 5px;
+        }
+    }
+}
+
+#grid-container {
+    width: 100vw;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    color: $burgundy;
+    overflow-y: hidden;
+
+    .product-wrapper {
+        background-color: $orange;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        position: relative;
+        border: 1px solid $burgundy;
+
+        .hover-functions {
+            position: absolute;
+            top: 6px;
+            right: 20px;
+            font-size: 20px;
+
+            i {
+                margin-left: 6px;
+                transition: all 0.3s ease-in-out;
+            }
+
+            .edit-button:hover {
+                color: $pink;
+                cursor: pointer;
+            }
+
+            .delete-button:hover {
+                color: $pink;
+                cursor: pointer;
+            }
+        }
+
+        img {
+            width: 247px;
+            height: 247px;
+            object-fit: cover;
+            margin-top: 54px;
+            border: 2px solid $burgundy;
+        }
+
+        .product-bio {
+            display: flex;
+            justify-content: center;
+            height: 58px;
+            width: 100%;
+
+            h3,
+            p {
+                width: 40%;
+                font-size: 20px;
+                line-height: 55px;
+                margin-bottom: 0%;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
+            h3 {
+                width: 70%;
+                margin-left: 54px;
+            }
+
+            p {
+                width: 30%;
+                text-align: right;
+                margin-right: 54px;
+            }
+
+            #comment-button {
+                position: absolute;
+                bottom: 12px;
+                right: 18px;
+                font-size: 22px;
+                transition: all 0.3s ease-in-out;
+
+            }
+
+            #comment-button:hover {
+                color: $pink;
+            }
+        }
+    }
+}
+
+// TABLET/IPAD -----------------------------------------------------------------------------------
+@media screen and (min-width: 768px) {
+    #shop-header {
+        padding: 1.5rem;
+
+        #logo-link {
+            width: 10%;
+        }
+
+
+        #profile-container {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            width: 92%;
+
+            #user-details {
+                .small-add {
+                    display: none;
+                }
+
+                #bignew-product-bttn {
+                    display: flex;
+                    align-items: center;
+                    background-color: $pink;
+                    border: 1px solid $burgundy;
+                    font-weight: bold;
+                    font-size: 18px;
+                    font-family: $roc;
+                    color: $burgundy;
+                    padding: 9px 35px;
+                    width: fit-content;
+                    overflow: hidden;
+                    margin-right: 1rem;
+                    transition: all 0.3s ease-in-out;
+
+                    i {
+                        font-size: 24px;
+                        padding-top: 1px;
+                    }
+                }
+
+                #bignew-product-bttn:hover {
+                    background-color: $yellow;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+
+    #grid-container {
+        grid-template-columns: repeat(2, 1fr);
+
+        .product-wrapper .product-bio #comment-button {
+            bottom: 11px;
+            right: 18px;
+            font-size: 24px;
+        }
+    }
+}
+
+@media screen and (min-width: 834px) {
+    #shop-header {
+        #profile-container {
+            #user-details {
+                i {
+                    font-size: 24px;
+                }
+            }
+        }
+    }
+
+    #grid-container {
+        grid-template-columns: repeat(2, 1fr);
+
+        .product-wrapper {
+            .hover-functions {
+                top: 11px;
+            }
+
+            img {
+                width: 305px;
+                height: 305px;
+            }
+
+            .product-bio {
+                height: 60px;
+
+                h3,
+                p {
+                    font-size: 23px;
+                    line-height: 58px;
+                }
+            }
+        }
+    }
+}
+
+// LAPTOP-----------------------------------------------------------------------------------
+@media screen and (min-width: 1024px) {
+    #shop-header {
+        #logo-link {
+            width: 7%;
+        }
+
+        #profile-container {
+            width: 93%;
+
+            #user-details {
+                #dp {
+                    width: 60px;
+                    height: 60px;
+                }
+            }
+        }
+    }
+
+    #grid-container {
+        grid-template-columns: repeat(3, 1fr);
+
+        .product-wrapper {
+
+            img {
+                width: 242px;
+                height: 242px;
+            }
+
+            h3,
+            p {
+                font-size: 2px;
+                line-height: 58px;
+            }
+        }
+    }
+}
+
+// LAPTOP-----------------------------------------------------------------------------------
+@media screen and (min-width: 1440px) {
+
+    #grid-container {
+        grid-template-columns: repeat(3, 1fr);
+
+        .product-wrapper {
+
+            img {
+                width: 342px;
+                height: 342px;
+            }
+        }
+    }
+}
+
+
+// Desktop-----------------------------------------------------------------------------------
+@media screen and (min-width: 1920px) {
+    #grid-container {
+        grid-template-columns: repeat(4, 1fr);
+
+        .product-wrapper img {
+            width: 368px;
+            height: 368px;
+        }
+    }
+}

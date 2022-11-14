@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- bootstrap icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <!-- Adboe Fonts -->
+    <link rel="stylesheet" href="https://use.typekit.net/byy0vzi.css">
+    <!-- Icon -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <!-- AOS css animations -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/x-icon" href="img/HWlogo1.png">
+    <title>Holloware</title>
+</head>
+
+<body>
+    <!-- ------------------ Header ---------------------- -->
+    <div id="header">
+        <ul id="topSignUpIn">
+            <li class="landing-h5 guest"><a href="register.html">Register</a></li>
+            <li class="landing-h5 guest"><a href="login.html">Login</a></li>
+        </ul>
+    </div>
+    <!-- ------------------ Add Product Form ------------------------>
+    <div class="modal fade" id="add-product-modal" tabindex="-1" aria-labelledby="addProductLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title" id="addProductLabel">Add New Product</h2>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="add-product-form">
+                        <label class="form-label" for="image-url-input">Image URL</label>
+                        <input class="form-control" id="image-url-input" name="image-url-input" type="text"
+                            placeholder="https://myimage.com/123abc">
+                        <br><br>
+
+                        <label class="form-label" for="name-input">Name</label>
+                        <input class="form-control" id="name-input" name="name-input" type="text">
+                        <br><br>
+
+                        <label class="form-label" for="price-input">Price</label>
+                        <input class="form-control" id="price-input" name="price-input" type="number">
+                        <br><br>
+
+                        <label class="form-label" for="description-input">Description</label>
+                        <input class="form-control" id="description-input" name="description-input" type="text">
+                        <br><br>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button id="submit-product-bttn" name="productButton" type="submit" class="btn btn-primary">Upload
+                        Product</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-------------------- Edit Product Form -------------------->
+    <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editProductModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title" id="editProductModalLabel">Edit Mode</h2>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="image-preview"></div>
+                    <form id="productForm">
+                        <label for="imageUrl">Enter image url of the product</label>
+                        <input type="text" id="imageUrl" name="imageUrl">
+                        <br><br>
+
+                        <label for="productName">Enter name of the product</label>
+                        <input type="text" id="productName" name="producttName">
+                        <br><br>
+
+                        <label for="productPrice">Enter price of the product</label>
+                        <input type="number" id="productPrice" name="productPrice">
+                        <br><br>
+
+                        <label for="productDescription">Enter Product Description:</label>
+                        <input type="text" name="productDescription" id="productDescription">
+                        <br><br>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button id="updateProduct" name="productButton" type="submit" class="btn btn-primary">Update
+                        Product</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ------------------ LANDING WORK SPACE ---------------------- -->
+    <div class="landing-container">
+        <img id="logo" src="img/HWlogo1.png" alt="Logo image">
+        <div class="landing-titles">
+            <h1 class="landing-h1">Holloware</h1>
+            <h2 class="landing-h2">Handmade Pottery & Ceramics</h2>
+        </div>
+        <div class="landing-left"></div>
+        <div class="landing-right"></div>
+    </div>
+
+    <!-- ------------------ Nav Bar ---------------------- -->
+    <nav>
+        <ul>
+            <li id="shop"><a href="#shop-header">Shop</a></li>
+            <li id="about"><a href="about.html">About</a></li>
+            <li id="contact">Contact</li>
+        </ul>
+    </nav>
+    <!-- ------------------ SHOP HEADER ---------------------- -->
+    <div id="shop-header">
+        <a id="logo-link" href="index.html"><img src="img/HWlogo1.png" alt="holloware logo" id="HWlogo"></a>
+        <div id="profile-container"></div>
+    </div>
+
+    <div id="grid-container"></div>
+
+    <div class="modal-container" id="add-product"></div>
+    <div class="modal-container" id="edit-product"></div>
+    <div id="user-overlay">
+        <div class="modal-container" id="user-profile"></div>
+    </div>
+
+    <!-- ------------------ SIDE MODAL WORK SPACE ---------------------- -->
+
+    <!-- Comments Modal -->
+    <div class="modal modal-dialog-scrollable" id="commentsModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div id="commentsHeader" class="modal-header">
+                </div>
+
+                <div class="modal-body">
+                    <div id="comments-result"></div>
+                </div>
+                <div class="modal-footer">
+                    <input type="text" id="comments-input" name="comments-input">
+                    <button id="post-comment-button" type="button" class="btn btn-primary"><i
+                            class="bi bi-send-fill"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- -------------------- Footer ---------------------- -->
+    <footer>
+        <div class="footer-container">
+            <div class="f-wrapper f-1">
+                <div class="f-menu-wrapper fm-1">
+                    <h4 class="f-title">Help</h4>
+                    <ul>
+                        <li><a href="">Delivery</a></li>
+                        <li><a href="">Returns Policy</a></li>
+                        <li><a href="">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="f-menu-wrapper fm-2">
+                    <h4 class="f-title">Contact</h4>
+                    <ul>
+                        <li><a href="">Join the community</a></li>
+                        <li><a href="">people@holloware.com</a></li>
+                    </ul>
+                </div>
+
+            </div>
+            <div class="f-wrapper f-2">
+                <h4 class="f-title">Subscribe</h4>
+                <div class="f-sub">
+                    <div class="email-fill">
+                        <input type="text" class="input" placeholder="youremail@email.com">
+                    </div>
+                    <div class="sub-btn">
+                        <span class="arrow"></span>
+                    </div>
+                    <div class="sub-btn-text">
+                        <a class="sub-text">Subscribe</a>
+                    </div>
+                </div>
+                <div class="social-media-icon">
+                    <ion-icon name="logo-facebook"></ion-icon>
+                    <ion-icon name="logo-twitter"></ion-icon>
+                    <ion-icon name="logo-instagram"></ion-icon>
+                </div>
+            </div>
+            <div class="f-wrapper f-4">
+                <img src="../frontend/img/HWlogo1.png" alt="Logo">
+            </div>
+        </div>
+        <div class="f-wrapper f-5">
+            <p>Copyright Holloware 2022 blah de blah blah</p>
+        </div>
+    </footer>
+
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"
+        integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <!-- Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous">
+        </script>
+    <!-- AOS css animations -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Custom JS -->
+    <script src="js/script.js"></script>
+</body>
+
+</html>

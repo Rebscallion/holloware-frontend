@@ -1,0 +1,443 @@
+// COMMENTS MODAL ------------------------
+
+#commentsModal {
+    width: 90%;
+    height: 100vh;
+    background-color: $orange;
+    border-left: 3px solid $burgundy;
+    position: fixed;
+    top: 0;
+
+    .modal-header {
+        width: 100%;
+        height: 10vh;
+        border: none;
+        box-shadow: none;
+        position: fixed;
+        top: 0;
+    }
+
+    .modal-body {
+        background-color: $orange;
+        height: 85vh;
+        position: fixed;
+        top: 0;
+        overflow-y: scroll;
+        padding-bottom: 14vh;
+    }
+
+    .modal-body::-webkit-scrollbar {
+        display: none;
+    }
+
+    .comment-text {
+        font-family: $roc;
+        font-weight: 500;
+        color: $burgundy;
+        font-size: 18px;
+        padding: 12px 15px 12px 25px;
+        margin: 15px 4% 15px -30px;
+        background-color: $offwhite;
+        border: 2px solid $burgundy;
+    }
+
+    .no-comments {
+        font-family: $roc;
+        font-weight: 500;
+        color: $burgundy;
+        font-size: 18px;
+        padding: 12px 15px 12px 25px;
+        margin: 15px 4% 15px -30px;
+        background-color: $pink;
+        border: 2px solid $burgundy;
+    }
+
+    .modal-footer {
+        width: 100%;
+        height: 16vh;
+        font-family: $roc;
+        font-weight: 500;
+        color: $burgundy;
+        font-size: 18px;
+        background-color: $pink;
+        border-top: 4px solid $burgundy;
+        border-radius: 0 0 0 0;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+    }
+
+    .comments-title {
+        width: 80%;
+        position: absolute;
+        top: 38vh;
+        left: 9%;
+        right: 11%;
+        font-family: lust-sans, sans-serif;
+        font-weight: 500;
+        font-style: normal;
+        color: $burgundy;
+        background-color: $offwhite;
+        padding: 10px;
+        text-align: center;
+        border: 2px solid $burgundy;
+    }
+
+    .comments-image {
+        width: 80%;
+        height: auto;
+        border: 2px solid $burgundy;
+        margin: 20px 0 20px 8%;
+    }
+
+    .laptop-image-container {
+        display: none;
+    }
+
+    .comments-image-laptop {
+        display: none;
+    }
+
+    .comments-description {
+        background-color: $yellow;
+        padding: 15px;
+        border: 2px solid $burgundy;
+        width: 98%;
+        font-size: 14px;
+        font-family: $roc;
+        font-weight: 500;
+        color: $burgundy;
+        margin: 0 0 -3px 0;
+    }
+
+    #comments-input {
+        width: 64%;
+        padding: 10px;
+        border: 2px solid $burgundy;
+        text-align: left;
+    }
+
+    .comments-pfp {
+        width: 35px;
+        height: 35px;
+        object-fit: cover;
+        border: 2px solid $burgundy;
+        border-radius: 50%;
+        margin: 0 12px 0px 0;
+    }
+
+    #post-comment-button {
+        padding: 7px 12px 0px 11px;
+        font-size: 28px;
+        color: $burgundy;
+        margin: 0 5% 0 5%;
+        background-color: $yellow;
+        border: 2px solid $burgundy;
+        transition: all 0.3s ease;
+    }
+
+    #post-comment-button:hover {
+        color: $yellow;
+        background-color: $burgundy;
+        border: 2px solid $yellow;
+    }
+
+    .btn-close {
+        background-color: $orange;
+        color: $burgundy;
+        position: fixed;
+        right: 2vw;
+        font-size: 24px;
+        opacity: 1;
+        transition: all 0.3s ease;
+    }
+
+    .btn-close:hover {
+        background-color: $pink;
+    }
+
+    .modal-content {
+        border: none;
+    }
+
+}
+
+// MOBILE MEDIUM ----------------------
+@media screen and (min-width: 375px) {
+
+    #commentsModal {
+
+        .comments-image {
+            margin: 20px 0 20px 8%;
+        }
+
+        .comments-description {
+            margin: 0 0 0 0.5%;
+            width: 95.5%;
+        }
+
+        #post-comment-button {
+            padding: 10px 15px 0px 12px;
+            font-size: 26px;
+            margin: 0 5% 0 5%;
+        }
+
+        .btn-close {
+            right: 3vw;
+        }
+    }
+}
+
+// MOBILE LARGE -----------------------
+@media screen and (min-width: 425px) {
+
+    #commentsModal {
+
+        .comment-text,
+        .no-comments {
+            padding: 12px 15px 12px 25px;
+            margin: 15px 13% 15px -2px;
+        }
+
+        .comments-image {
+            margin: 20px 0 20px 8%;
+        }
+
+        .comments-description {
+            font-size: 18px;
+            margin: 0 0 0 8%;
+            width: 80%;
+        }
+
+        #post-comment-button {
+            padding: 10px 15px 0px 12px;
+            font-size: 26px;
+            margin: 0 5% 0 5%;
+        }
+
+        .btn-close {
+            right: 3vw;
+        }
+    }
+}
+
+// TABLET -----------------------------
+@media screen and (min-width: 768px) {
+
+    #commentsModal {
+        width: 100%;
+        height: 100vh;
+        background-color: $orange;
+        border-left: 3px solid $burgundy;
+        position: fixed;
+        top: 0;
+
+        .modal-body {
+            width: 80%;
+            background-color: $orange;
+            height: 90vh;
+            position: fixed;
+            top: 0;
+        }
+
+        .comment-text,
+        .no-comments {
+            font-size: 26px;
+            padding: 12px 15px 12px 25px;
+            margin: 15px 26% 15px 0;
+        }
+
+        .modal-footer {
+            height: 14vh;
+            font-size: 26px;
+        }
+
+        .comments-image {
+            width: 60%;
+            margin: 30px 0 30px 10%;
+        }
+
+        .comments-description {
+            font-size: 22px;
+            margin: 0 0 30px 10%;
+            width: 60%;
+        }
+
+        #post-comment-button {
+            padding: 10px 15px 0px 12px;
+            font-size: 32px;
+            margin: 0 12% 0 5%;
+        }
+
+        .btn-close {
+            right: 3vw;
+        }
+    }
+}
+
+// LAPTOP SMALL -----------------------
+@media screen and (min-width: 1024px) {
+
+    #commentsModal {
+        width: 100%;
+        height: 100vh;
+
+        .modal-body {
+            width: 55%;
+            position: fixed;
+            top: 4vh;
+            left: 5vw;
+        }
+
+        .comment-text {
+            font-size: 16px;
+            padding: 12px 15px 12px 25px;
+            margin: 15px 13% 15px -30px;
+        }
+
+        .no-comments {
+            font-size: 22px;
+            bottom: 4vh;
+        }
+
+        .modal-footer {
+            height: 18vh;
+            font-size: 18px;
+        }
+
+        .comments-image {
+            display: none;
+        }
+
+        .laptop-image-container {
+            display: block;
+            width: 42%;
+            height: 86vh;
+            overflow: hidden;
+            position: fixed;
+            top: -3px;
+            right: 0;
+            border-left: 3px solid $burgundy;
+        }
+
+        .comments-image-laptop {
+            display: block;
+            width: 100%;
+            object-fit: cover;
+            object-position: center;
+            height: 86vh;
+            border: none;
+        }
+
+        .comments-description {
+            width: 88%;
+            font-size: 16px;
+            margin: 0 0 30px 0;
+        }
+
+        #comments-input {
+            width: 54%;
+        }
+
+        .comments-pfp {
+            width: 40px;
+            height: 40px;
+        }
+
+        #post-comment-button {
+            font-size: 28px;
+            margin: 0 16% 0 5%;
+        }
+
+        #post-comment-button:hover {
+            color: $yellow;
+            background-color: $burgundy;
+            border: 2px solid $yellow;
+        }
+
+        .btn-close {
+            position: fixed;
+            right: 4vw;
+            font-size: 24px;
+            z-index: 99;
+        }
+    }
+}
+
+// LAPTOP LARGE -----------------------
+@media screen and (min-width: 1440px) {
+
+    #commentsModal {
+
+        .modal-body {
+            top: 3vh;
+        }
+
+        .comment-text {
+            font-size: 24px;
+            padding: 18px 20px 18px 30px;
+        }
+
+        .no-comments {
+            font-size: 28px;
+            bottom: 9vh;
+            padding: 20px;
+        }
+
+        .modal-footer {
+            height: 18vh;
+            font-size: 22px;
+        }
+
+        .comments-image {
+            display: none;
+        }
+
+        .laptop-image-container {
+            display: block;
+            width: 42%;
+            height: 86vh;
+            overflow: hidden;
+            position: fixed;
+            top: -3px;
+            right: 0;
+        }
+
+
+
+        .comments-description {
+            width: 88%;
+            font-size: 22px;
+            margin: 0 0 30px 0;
+        }
+
+        #comments-input {
+            width: 54%;
+            padding: 16px;
+        }
+
+        .comments-pfp {
+            width: 40px;
+            height: 40px;
+        }
+
+        #post-comment-button {
+            font-size: 34px;
+            padding: 15px 20px 3px 18px;
+            margin: 0 16% 0 6%;
+        }
+
+        #post-comment-button:hover {
+            color: $yellow;
+            background-color: $burgundy;
+            border: 2px solid $yellow;
+        }
+
+        .btn-close {
+            position: fixed;
+            right: 4vw;
+            font-size: 32px;
+            z-index: 99;
+        }
+    }
+}

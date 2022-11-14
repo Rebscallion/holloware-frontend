@@ -1,0 +1,289 @@
+//-----Text Styling-----
+
+.landing-h1 {
+    color: $burgundy;
+    font-size: 60px;
+    position: relative;
+    animation: bounce 5s ease;
+    overflow: hidden;
+}
+
+@keyframes bounce {
+    0% {
+        transform: scale(1, 1) translateY(0);
+    }
+
+    10% {
+        transform: scale(1.1, .9) translateY(0);
+    }
+
+    30% {
+        transform: scale(.9, 1.1) translateY(-15px);
+    }
+
+    50% {
+        transform: scale(1.05, .95) translateY(0);
+    }
+
+    58% {
+        transform: scale(1, 1) translateY(-7px);
+    }
+
+    65% {
+        transform: scale(1, 1) translateY(0);
+    }
+
+    100% {
+        transform: scale(1, 1) translateY(0);
+    }
+}
+
+.landing-h2 {
+    font-family: $roc;
+    color: $burgundy;
+    font-size: 20px;
+    overflow: hidden;
+}
+
+.landing-h5 {
+    color: $burgundy;
+    font-size: 20px;
+    margin: 15px 0 0 20px;
+    overflow: hidden;
+}
+
+#topSignUpIn {
+    display: block;
+
+    li a {
+        color: $burgundy;
+        text-decoration: none;
+    }
+
+    li a:hover {
+        color: $burgundy;
+        text-decoration: underline;
+        opacity: 60%;
+    }
+}
+
+#topSignUpIn.hidden {
+    display: none;
+}
+
+#logo {
+    display: none;
+    position: absolute;
+    top: 2%;
+    left: 3%;
+    width: 20%;
+    height: auto;
+}
+
+nav {
+    width: 100%;
+    height: 81px;
+    background-color: $pink;
+    border-top: 1px solid $burgundy;
+    border-bottom: 1px solid $burgundy;
+    font-family: roc-grotesk, sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    position: fixed;
+    bottom: 0;
+    z-index: 100;
+    color: $burgundy;
+
+    ul {
+        display: flex;
+        justify-content: center;
+        padding: 0;
+        margin: 0;
+        line-height: 79px;
+
+        li a {
+            color: $burgundy;
+            text-decoration: none;
+            font-size: 28px;
+            margin: 0 10px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        li a:hover {
+            color: $orange;
+            cursor: pointer;
+        }
+    }
+}
+
+#header {
+    position: absolute;
+    top: 0;
+    right: 16px;
+    height: 10vh;
+    font-family: roc-grotesk, sans-serif;
+    font-weight: 500;
+    font-style: normal;
+
+    ul {
+        display: flex;
+    }
+}
+
+// -----Landing Page Divs-----
+.landing-container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+
+    .landing-titles {
+        width: 90%;
+        position: absolute;
+        top: 38vh;
+        left: 5%;
+        text-align: center;
+        font-family: lust-sans, sans-serif;
+        font-weight: 500;
+        font-style: normal;
+    }
+
+    .landing-left {
+        display: none;
+    }
+
+    .landing-right {
+        width: 100%;
+        background-image: url(../img/right.png);
+        background-size: cover;
+        background-position: center;
+    }
+}
+
+
+// TABLET/IPAD -----------------------------------------------------------------------------------
+
+@media screen and (min-width: 834px) {
+
+    //-----Text Styling-----
+    .landing-h1 {
+        font-size: 124px;
+    }
+
+    .landing-h2 {
+        font-size: 40px;
+    }
+
+    .landing-h5 {
+        font-size: 30px;
+        margin: 10px 0 0 30px;
+    }
+
+    nav ul li {
+        font-size: 28px;
+        margin: 0 40px;
+    }
+
+    #logo {
+        display: block;
+        position: absolute;
+        top: 2%;
+        left: 5%;
+        width: 10%;
+        height: auto;
+    }
+
+    // -----Landing Page Divs-----
+    .landing-container {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+
+        .landing-titles {
+            width: 90%;
+            height: 20vh;
+            position: absolute;
+            top: 38vh;
+            left: 5%;
+            text-align: center;
+        }
+    }
+}
+
+// LAPTOP SMALL ---------------------------------------------------------------------------------
+@media screen and (min-width: 1024px) {
+
+    .landing-h1 {
+        font-size: 104px;
+    }
+
+    .landing-h2 {
+        font-size: 30px;
+    }
+
+    #logo {
+        width: 6%;
+        left: 4%;
+    }
+
+    //-----Landing Page-----
+    .landing-container {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+
+        .landing-titles {
+            width: 70%;
+            height: 30vh;
+            position: absolute;
+            top: 34vh;
+            left: 15%;
+            text-align: center;
+        }
+
+        .landing-left {
+            display: block;
+            width: 50%;
+            background-image: url(../img/left.png);
+            background-size: cover;
+            background-position: 60% 100%;
+        }
+
+        .landing-right {
+            width: 50%;
+            background-position: 80% 10%;
+        }
+    }
+}
+
+// LAPTOP LARGE -----------------------------------------------------------------------------
+@media screen and (min-width: 1440px) {
+
+    .landing-h1 {
+        font-size: 124px;
+    }
+
+    .landing-h2 {
+        font-size: 40px;
+    }
+}
+
+
+//Desktop-----------------------------------------------------------------------------------
+@media screen and (min-width: 1920px) {
+
+    //-----Text Styling-----
+    .landing-h1 {
+        font-size: 150px;
+    }
+
+    .landing-h2 {
+        font-size: 40px;
+    }
+
+    nav ul li {
+        font-size: 30px;
+        margin: 0px 90px;
+    }
+}
