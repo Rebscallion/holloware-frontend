@@ -3,7 +3,7 @@ const usernameInput = document.getElementById("username-input");
 const passwordInput = document.getElementById("password-input");
 const profileImgInput = document.getElementById("image-url-input");
 
-const server = "http://holloware-backend-psi.vercel.app";
+const server = "https://holloware-backend-psi.vercel.app";
 
 registerBtn.onclick = function () {
     event.preventDefault();

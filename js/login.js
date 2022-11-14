@@ -3,7 +3,7 @@ const loginBtn = document.getElementById("login-button");
 const usernameInput = document.getElementById("username-input");
 const passwordInput = document.getElementById("password-input");
 
-const server = "http://holloware-backend-psi.vercel.app";
+const server = "https://holloware-backend-psi.vercel.app";
 
 loginBtn.onclick = () => {
     $.ajax({

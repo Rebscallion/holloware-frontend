@@ -16,7 +16,7 @@ const commentsResult = document.getElementById("comments-result");
 let showAllProducts = () => {
   $.ajax({
     type: 'GET',
-    url: "http://holloware-backend-psi.vercel.app/allProducts",
+    url: "https://holloware-backend-psi.vercel.app/allProducts",
     //the success function contains an object which can be named anything 
     success: (products) => {
       console.log(products);
@@ -52,7 +52,7 @@ let openCommentModal = (productId) => {
   // Ajax GET to request the individual product via ID
   $.ajax({
     type: 'GET',
-    url: `http://holloware-backend-psi.vercel.app/product/${productId}`,
+    url: `https://holloware-backend-psi.vercel.app/product/${productId}`,
     //the success function contains an object which can be named anything 
     success: (product) => {
       commentsResult.innerHTML = `
@@ -79,7 +79,7 @@ let openCommentModal = (productId) => {
     console.log(productId);
     console.log("left a comment");
     $.ajax({
-      url: `http://holloware-backend-psi.vercel.app/postComment`,
+      url: `https://holloware-backend-psi.vercel.app/postComment`,
       type: 'POST',
       data: {
         text: document.getElementById("comments-input").value,
@@ -162,7 +162,7 @@ let renderProducts = (products) => {
 
 let deleteProduct = (productId) => {
   $.ajax({
-    url: `http://holloware-backend-psi.vercel.app/deleteProduct/${productId}`,
+    url: `https://holloware-backend-psi.vercel.app/deleteProduct/${productId}`,
     type: "DELETE",
     success: () => {
       showAllProducts();
@@ -223,7 +223,7 @@ let fillEditInputs = (product, id) => {
     let productDescription = document.getElementById("productDescription").value;
     console.log(productId, imageurl, productName, productPrice, productDescription);
     $.ajax({
-      url: `http://holloware-backend-psi.vercel.app/updateProduct/${productId}`,
+      url: `https://holloware-backend-psi.vercel.app/updateProduct/${productId}`,
       type: "PATCH",
       data: {
         name: productName,
@@ -247,7 +247,7 @@ let populateEditModal = (productId) => {
   console.log(productId);
   $.ajax({
     type: 'GET',
-    url: `http://holloware-backend-psi.vercel.app/product/${productId}`,
+    url: `https://holloware-backend-psi.vercel.app/product/${productId}`,
     success: (productData) => {
       console.log(productData);
       fillEditInputs(productData, productId);
@@ -352,7 +352,7 @@ let checkLogin = () => {
     submit.onclick = () => {
       console.log("clicked submit");
       $.ajax({
-        url: `http://holloware-backend-psi.vercel.app/addProduct`,
+        url: `https://holloware-backend-psi.vercel.app/addProduct`,
         type: "POST",
         data: {
           image_url: imageURLInput.value,
